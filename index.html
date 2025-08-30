@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kids Poem & Story App</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background: linear-gradient(to bottom right, #ffe4ec, #e0f7fa);
+      text-align: center;
+      color: #333;
+    }
+
+    header {
+      padding: 20px;
+      background: #ff80ab;
+      color: white;
+      font-size: 2em;
+      font-weight: bold;
+    }
+
+    .container {
+      padding: 20px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 20px;
+      padding: 20px;
+      margin: 20px auto;
+      max-width: 600px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
+    }
+
+    .card:hover {
+      transform: scale(1.02);
+    }
+
+    .card img {
+      max-width: 120px;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      color: #ff4081;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 25px;
+      background: #4db6ac;
+      color: white;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: #00796b;
+    }
+
+    footer {
+      margin-top: 30px;
+      padding: 15px;
+      background: #ff80ab;
+      color: white;
+      font-size: 1em;
+    }
+  </style>
+</head>
+<body>
+  <header>🐼 Kids Poem & Story App 🐿️</header>
+
+  <div class="container">
+
+    <!-- Panda Poem -->
+    <div class="card">
+      <img src="https://i.ibb.co/7r4VYcD/panda.png" alt="Panda Cartoon">
+      <h2>Poem: Panda’s Day</h2>
+      <p id="poem">
+        Panda wakes up with the sun, 🌞<br>
+        Plays and munches, having fun. 🎋<br>
+        Soft and cuddly, black and white, 🐼<br>
+        Panda makes the world so bright! ✨
+      </p>
+      <button onclick="readText('poem')">🔊 Read Aloud</button>
+    </div>
+
+    <!-- Squirrel Story -->
+    <div class="card">
+      <img src="https://i.ibb.co/2vD4q4c/squirrel.png" alt="Squirrel Cartoon">
+      <h2>Story: The Busy Squirrel</h2>
+      <p id="story">
+        In the forest, there lived a squirrel named Sammy. 🐿️  
+        He loved collecting nuts and hiding them in little holes. 🌰  
+        One day, he helped his bird friend find food,  
+        and learned that sharing brings the biggest joy. 💖  
+      </p>
+      <button onclick="readText('story')">🔊 Read Aloud</button>
+    </div>
+
+  </div>
+
+  <footer>✨ Made with love for kids ✨</footer>
+
+  <script>
+    function readText(id) {
+      const text = document.getElementById(id).innerText;
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = 'en-US';
+      speechSynthesis.speak(utterance);
+    }
+  </script>
+</body>
+</html>
